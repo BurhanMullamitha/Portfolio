@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0; 
+    font-family: 'Muli', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+/* Header Section */
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 0px 15px;
+}
+
+header .row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .name a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header .name a::before {
+    content: '';
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+header .navbar {
+}
+
+header .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar ul li {
+    display: inline-block;
+    margin-left: 45px;
+}
+
+header .navbar ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 72px;
+    color: black;
+    font-weight: 600;
+    position: relative;
+    display: block;
+}
+
+header .navbar ul li a::before {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background-color: black;
+    position: absolute;
+    right: 0px;
+    bottom: -1px;
+    transition: all .5s ease;
+}
+
+header .navbar ul li a:hover::before {
+    width: 100%;
+    left: 0%;
+}
+
+header .navbar ul li a.active::before {
+    width: 100%;
+    left: 0%;
+}
+
+/* Home Section */
+.home {
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.home .full-screen {
+    min-height: 100vh;
+    
+}
+
+.home .home-content {
+    max-width: 100%;
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.home .home-content .block {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 35px;
+    border-left: 5px solid #000;
+}
+
+.home .home-content .image-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center;
+}
+
+.home .home-content .image-container .image-wrapper .my-image{
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+.home .home-content .block h6 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.home .home-content .block h1 {
+    font-size: 70px;
+    font-weight: 600;
+    padding: 0;
+}
+
+.home .home-content .block h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.home .home-content .block .cv-btn {
+    padding-top: 20px;
+}
+
+.home .home-content .block .cv-btn a {
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14 px;
+    color: black;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.home .home-content .block .cv-btn a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* About Me Section */
+.about-me {
+    padding: 100px 15px;
+}
+
+.about-me .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.about-me .section-title h1{
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+
+.about-me .section-title h1:before{
+    content: '';
+    left: 0px;
+    right: 25%;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    bottom: 0px;
+    
+}
+
+.about-me .section-title p{
+    display: block;
+}
+
+.text-uppercase {
+text-transform: uppercase !important;
+}
+
+.about-me .section-title p.small{
+    display: block;
+    font-size: 14px;
+    color: #838383;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+
+.about-me .about-content .img {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    border: 4px solid black;
+}
+
+.about-me .about-content .img img{
+    width: 100%;
+    display: block;
+}
+
+.about-me .about-content .text{
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+    padding-left: 30px;
+}
+
+.about-me .about-content .text h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.about-me .about-content .text h6{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 15px;
+}
+
+.about-me .about-content .text p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #838383;
+    margin: 0 0 20px;
+}
+
+.about-me .about-content .text .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-me .about-content .text .info .info-row {
+    display: flex;
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    margin-top: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.about-me .about-content .text .info .info-row label {
+    padding-right: 10px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.about-me .about-content .text .info .info-row p {
+    margin: 0; 
+}
+
+.about-me .about-content .text .social-links {
+    padding-top: 30px;
+}
+
+
+.about-me .about-content .text .social-links a{
+    height: 35px;
+    width: 35px;
+    background-color: black;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid black;
+    line-height: 28px;
+    text-align: center;
+    margin: 0 1px;
+    transition: all .5s ease;
+}
+
+.about-me .about-content .text .social-links a:hover{
+    background-color: transparent;
+}
+
+.about-me .about-content .text .social-links a .fa{
+    color: white;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    transition: all .5s ease;
+}
+
+.about-me .about-content .text .social-links a:hover .fa{
+    color: black;
+}
