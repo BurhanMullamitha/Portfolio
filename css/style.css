@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Muli', sans-serif;
@@ -29,7 +33,24 @@ header {
     right: 0;
     border-bottom: 1px solid #E5E5E5;
     padding: 0px 15px;
+    z-index: 10;
 }
+
+header.fixed {
+    background-color: white;
+    position: fixed;
+    animation: headerAnim .5s ease;
+}
+
+@keyframes headerAnim {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 
 header .row {
     justify-content: space-between;
@@ -133,8 +154,10 @@ header .navbar ul li a.active::before {
 }
 
 .home .home-content .image-container .image-wrapper .my-image {
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
-    border: 4px solid black;
+    border: 2px solid black;
 }
 
 .home .home-content .block h6 {
@@ -182,7 +205,7 @@ header .navbar ul li a.active::before {
 
 /* About Me Section */
 .about-me {
-    padding: 100px 15px;
+    padding: 100px 15px 50px;
     background-color: rgb(242, 242, 242);
 }
 
@@ -203,7 +226,7 @@ header .navbar ul li a.active::before {
 
 .about-me .section-title h1:before {
     content: '';
-    left: 25%;
+    left: 0px;
     right: 25%;
     height: 2px;
     position: absolute;
@@ -231,7 +254,6 @@ header .navbar ul li a.active::before {
 .about-me .about-content .img {
     flex: 0 0 33.33%;
     max-width: 33.33%;
-    border: 4px solid black;
 }
 
 .about-me .about-content .img img {
@@ -327,7 +349,7 @@ header .navbar ul li a.active::before {
 
 /* Skills Section */
 .skills {
-    padding: 50px 0px 70px;
+    padding: 100px 15px 70px;
     background-color: rgb(242, 242, 242);
 }
 
@@ -379,15 +401,15 @@ header .navbar ul li a.active::before {
 .skills .skills-content .box {
     background-color: white;
     border: 2px solid white;
-    flex: 0 0 27%;
-    max-width: 27%;
+    flex: 0 0 calc(29% - 15px);
+    max-width: calc(29% - 15px);
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0.4rem 0.4rem 0.4rem rgba(46, 41, 78, .15);
     transition: transform .3s;
     text-align: center;
     margin: 10px 0 0;
-    height: max-content;
+    height: 400px;
 }
 
 .skills .skills-content .box:hover {
@@ -428,7 +450,7 @@ header .navbar ul li a.active::before {
 /* Projects Section */
 
 .projects {
-    padding: 50px 0px 100px;
+    padding: 100px 15px 70px;
     background-color: rgb(242, 242, 242);
 }
 
@@ -555,7 +577,7 @@ header .navbar ul li a.active::before {
 
 /* Contact Section */
 .contact {
-    padding: 50px 0px 70px;
+    padding: 100px 0 0 0;
 }
 
 .contact .section-title {
@@ -686,4 +708,195 @@ footer {
     40% {
         transform: scale(1.5) rotate(-45deg)
     }
+}
+
+.ham-burger-menu .fa {
+    font-size: 30px;
+    height: 20px;
+    width: 35px;
+    line-height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+/* Media Queries */
+
+@media(max-width: 1080px) {
+    .skills .skills-content .box {
+        flex: 0 0 30%;
+        max-width: 30%;
+        padding: 15px;
+        height: 360px;
+    }
+}
+
+@media(max-width: 991px) {
+    .home .home-content .block h1 {
+        font-size: 50px;
+    }
+    .skills .skills-content .box {
+        flex: 0 0 28%;
+        max-width: 28%;
+        padding: 15px;
+        height: 360px;
+    }
+
+    .skills .skills-content .box p {
+        font-size: 18px;
+    }
+
+    .skills .skills-content .box-1, .skills .skills-content .box-2, .skills .skills-content .box-3  {
+        margin: 40px auto;
+    }
+
+    .skills {
+        padding: 100px 15px 0px;
+    }
+
+    .about-me {
+        padding: 100px 15px 0px;
+    }
+
+    .projects .projects-content .box {
+        flex:0 0 40%;
+        max-width: 40%;
+    }
+}
+
+@media(max-width: 767px) {
+    .home .home-content .block h1 {
+        font-size: 45px;
+    }
+
+    .home .home-content .block h3 {
+        font-size: 20px;
+    }
+
+    .home .home-content .image-container .image-wrapper .my-image {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        border: 2px solid black;
+    }
+    header {
+        padding: 15px;
+        position: fixed;
+        background-color: white;
+    }
+    .ham-burger-menu .fa {
+        display: inline-block;
+    }
+    .navbar {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        padding: 15px;
+        background-color: black;
+        display: none;
+    }
+
+    .navbar.show {
+        display: block;
+    }
+
+    header .navbar ul li {
+        display: block;
+        margin-left: 0;
+    }
+    header .navbar ul li a {
+        color: white;
+        line-height: 42px;
+    }
+    header .navbar ul li a::before {
+        background-color: white; 
+    }
+    .about-me .about-content .text .info .info-row {
+        flex: 0 0 calc(100% - 30px);
+        max-width: calc(100% - 30px);
+    }
+    .about-me .about-content .text p {
+        line-height: 21.5px; 
+    }
+
+    .skills .skills-content .box {
+        flex: 0 0 40%;
+        max-width: 40%;
+        padding: 15px;
+        height: 335px;
+    }
+
+    .skills .skills-content .box p {
+        font-size: 16px;
+    }
+
+    .skills .skills-content .box-1, .skills .skills-content .box-2, .skills .skills-content .box-3  {
+        margin: 40px auto;
+    }
+
+    .skills {
+        padding: 100px 15px 0px;
+    }
+
+    .about-me {
+        padding: 100px 15px 0px;
+    }
+
+    .projects .projects-content .box {
+        flex:0 0 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+}
+
+@media(max-width: 520px) {
+
+    .home .home-content {
+        margin-top: 120px;
+        flex-direction: column;
+    }
+
+    .home .home-content .image-container {
+        order: 1;
+        height: max-content;
+        max-width: 100%;
+    }
+    
+    .home .home-content .block {
+        order: 2;
+        flex: 0;
+        max-width: 100%;
+    }
+
+    .about-me .about-content .img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 30px;
+    }
+    
+    .about-me .about-content .text {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    .projects .projects-content .box {
+        flex:0 0 calc(90% - 15px);
+        max-width: calc(90% - 15px);
+        margin: 10px;
+    }
+
+    .skills .skills-content .box {
+        flex: 0 0 calc(90% - 10px);
+        max-width: 70%;
+        padding: 15px;
+        height: 360px;
+    }
+
+    .contact .contact-content .contact-box {
+        padding: 30px;
+    }
+
+
 }
